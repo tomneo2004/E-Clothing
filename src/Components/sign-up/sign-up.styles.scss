@@ -1,4 +1,4 @@
-.signin{
+.sign-up{
     width: 37vw;
     display: flex;
     flex-direction: column;
@@ -7,11 +7,4 @@
     .title{
         margin: 10px 0;
     }
-
-    .button{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
 }
-

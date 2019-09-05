@@ -21,7 +21,7 @@ class Signup extends Component{
 
         evt.preventDefault();
 
-        const {displayName, email, password, confirmPassword} = this. state;
+        const {displayName, email, password, confirmPassword} = this.state;
 
         if(password !== confirmPassword){
 
@@ -60,7 +60,7 @@ class Signup extends Component{
 
     render(){
 
-        const {displayName, email, password, confirmPassword} = this. state;
+        const {displayName, email, password, confirmPassword} = this.state;
 
         return (
 

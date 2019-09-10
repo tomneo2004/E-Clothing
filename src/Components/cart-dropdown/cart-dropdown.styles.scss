@@ -7,7 +7,7 @@
   padding: 20px;
   border: 1px solid black;
   background-color: white;
-  top: 60px;
+  top: 65px;
   right: 85px;
   z-index: 5;
 
@@ -15,7 +15,13 @@
     height: 240px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     overflow: scroll;
+
+    .empty{
+      font-size: 30px;
+    }
   }
 
   button {

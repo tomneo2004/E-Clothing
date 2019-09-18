@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {Auth} from '../../firebase/firebase.utils';
 import {ReactComponent as Logo} from '../../Assets/crown.svg';

@@ -1,17 +1,17 @@
 import React from 'react';
 import Signin from '../../Components/sign-in/sign-in.component';
 import Signup from '../../Components/sign-up/sign-up.component';
-import './sign-in-sign-up.styles.scss'
+import {SignInUpContainer, Divider} from './sign-in-sign-up.styles';
 
 const SigninSignupPage = ()=>{
 
     return (
         
-        <div className='sigin-signup'>
+        <SignInUpContainer>
             <Signin />
-            <hr className='divider'/>
+            <Divider />
             <Signup />
-        </div>
+        </SignInUpContainer>
     );
 }
 

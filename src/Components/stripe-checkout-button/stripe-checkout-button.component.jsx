@@ -1,5 +1,6 @@
 import React from 'react';
-import StripeCheckout from 'react-stripe-checkout';
+// import StripeCheckout from 'react-stripe-checkout';
+import {CheckoutButton} from './stripe-checkout-button.styles';
 
 const StripeCheckoutButton = ({price})=>{
     const stripePrice = price * 100;
@@ -11,7 +12,7 @@ const StripeCheckoutButton = ({price})=>{
     }
 
     return (
-        <StripeCheckout
+        <CheckoutButton
             label='Pay Now'
             name='E-Clothing'
             billingAddress

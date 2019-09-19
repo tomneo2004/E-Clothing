@@ -5,7 +5,7 @@ import CollectionPreview from '../collection-preview/collection-preview.componen
 import {connect} from 'react-redux';
 import {CollectionOverviewContainer} from './collection-overview.styles';
 
-const CollectionOverview = ({collections, match})=>{
+const CollectionOverview = ({collections})=>{
     return (
 
         <CollectionOverviewContainer>

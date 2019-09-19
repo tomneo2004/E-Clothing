@@ -1,12 +1,13 @@
 import React from 'react';
 import CollectionItem from '../collection-item/collection-item.component';
 import {CollectionPreviewContainer, Title, Preview} from './collection-preview.styles';
+import {withRouter} from 'react-router-dom';
 
-const CollectionPreview = ({title, items})=>{
+const CollectionPreview = ({title, items, match})=>{
 
     return (
         <CollectionPreviewContainer>
-            <Title>{title}</Title>
+            <Title to={`${match.path}/${title.toLowerCase()}`}>{title}</Title>
             <Preview>
                 {
                     items
@@ -18,4 +19,4 @@ const CollectionPreview = ({title, items})=>{
     );
 }
 
-export default CollectionPreview;
+export default withRouter(CollectionPreview);

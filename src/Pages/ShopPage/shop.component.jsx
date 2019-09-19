@@ -5,8 +5,16 @@ import {Route} from 'react-router-dom';
 import {Firestore, TransformCollectionsToMap} from '../../firebase/firebase.utils.js';
 import {connect} from 'react-redux';
 import {updateCollections} from '../../Redux/shop/shop.actions';
+import WithSpinner from '../../Components/with-spinner/with-spinner.component';
+
+const SpinnerCollectionOverview = WithSpinner(CollectionOverview);
+const SpinnerCollectionPage = WithSpinner(CollectionPage);
 
 class Shop extends Component{
+
+    state = {
+        loading:true
+    }
     
     unsubscribeFromSnapshot = null;
 
@@ -21,6 +29,8 @@ class Shop extends Component{
             const transformedCollections = TransformCollectionsToMap(snapshot);
 
             updateCollections(transformedCollections);
+
+            this.setState({loading:false});
         });
         
     }
@@ -33,11 +43,12 @@ class Shop extends Component{
     render(){
 
         const {match} = this.props;
+        const {loading} = this.state;
         return (
 
             <div>
-                <Route exact path={`${match.path}`} component={CollectionOverview} />
-                <Route exact path={`${match.path}/:collectionId`} component={CollectionPage} />
+                <Route exact path={`${match.path}`} render={(props)=>(<SpinnerCollectionOverview isLoading={loading} {...props} />)} />
+                <Route exact path={`${match.path}/:collectionId`} render={(props)=>(<SpinnerCollectionPage isLoading={loading} {...props} />)} />
             </div>
         );
     }

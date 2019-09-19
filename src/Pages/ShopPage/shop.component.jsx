@@ -15,8 +15,6 @@ class Shop extends Component{
     state = {
         loading:true
     }
-    
-    unsubscribeFromSnapshot = null;
 
     componentDidMount(){
 
@@ -24,20 +22,16 @@ class Shop extends Component{
 
         const collectionRef = Firestore.collection('collections');
 
-        this.unsubscribeFromSnapshot = collectionRef.onSnapshot(async (snapshot)=>{
+        collectionRef.get()
+        .then((snapshot)=>{
 
-            const transformedCollections = TransformCollectionsToMap(snapshot);
-
-            updateCollections(transformedCollections);
-
-            this.setState({loading:false});
+                const transformedCollections = TransformCollectionsToMap(snapshot);
+    
+                updateCollections(transformedCollections);
+    
+                this.setState({loading:false});
         });
         
-    }
-
-    componentWillUnmount(){
-
-        this.unsubscribeFromSnapshot();
     }
 
     render(){

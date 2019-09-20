@@ -5,7 +5,8 @@ import {Auth} from '../../firebase/firebase.utils';
 import {ReactComponent as Logo} from '../../Assets/crown.svg';
 import {HeaderContainer, LogoContainer, OptionsContainer, OptionLink, OptionDiv} from './header.styles';
 import CartIcon from '../cart-icon/cart-icon.component';
-import CartDropdown from '../cart-dropdown/cart-dropdown.component';
+// import CartDropdown from '../cart-dropdown/cart-dropdown.component';
+import CartDropdownContainer from '../cart-dropdown/cart-dropdown-container.component';
 import {createStructuredSelector} from 'reselect';
 import {SelectCurrentUser} from '../../Redux/user/user.selector';
 import {SelectCartHidden} from '../../Redux/cart/cart.selector';
@@ -34,7 +35,7 @@ const Header = ({currentUser, cartHidden})=>{
                 cartHidden?
                 null
                 :
-                <CartDropdown />
+                <CartDropdownContainer />
             }
             
         </HeaderContainer>

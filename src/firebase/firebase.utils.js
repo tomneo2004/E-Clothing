@@ -1,6 +1,7 @@
-import firebase, { firestore } from 'firebase/app';
+import firebase, { firestore, auth } from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
+import { resolve } from 'dns';
 
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FB_API_KEY,
@@ -83,8 +84,18 @@ const firebaseConfig = {
 
   }
 
-  const provider = new firebase.auth.GoogleAuthProvider();
-  provider.setCustomParameters({prompt:'select_account'});
-  export const SigninWithGoogle = ()=>Auth.signInWithPopup(provider);
+  export const getCurrentUser = ()=>{
+      return new Promise((resolve, reject)=>{
+
+        const unsubscribe = Auth.onAuthStateChanged(userAuth=>{
+            unsubscribe();
+            resolve(userAuth);
+        }, reject)
+      });
+  }
+
+  export const googleProvider = new firebase.auth.GoogleAuthProvider();
+  googleProvider.setCustomParameters({prompt:'select_account'});
+  export const SigninWithGoogle = ()=>Auth.signInWithPopup(googleProvider);
 
   export default firebase;

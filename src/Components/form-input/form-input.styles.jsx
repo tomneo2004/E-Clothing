@@ -21,7 +21,7 @@ export const Input = styled.input`
     width: 100%;
     border: none;
     border-radius: 0;
-    border-bottom: 1px solid grey;
+    border-bottom: ${({highlight})=>(highlight?'2px solid red':' 1px solid grey')};
     margin: 25px 0;
 
     &:focus {

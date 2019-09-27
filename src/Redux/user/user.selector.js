@@ -7,3 +7,15 @@ export const SelectCurrentUser = createSelector(
     
     user=>user.currentUser
 );
+
+export const SelectUserError = createSelector(
+    [selectUser],
+
+    user=>user.error
+);
+
+export const SelectUserSignupError = createSelector(
+    [selectUser],
+
+    user=>user.signupError
+);

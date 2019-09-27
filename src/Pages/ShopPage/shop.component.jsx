@@ -3,7 +3,7 @@ import React,{Component} from 'react';
 // import CollectionPage from '../CollectionPage/collectionpage.component';
 import {Route} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {fetchCollectionsStartAsync} from '../../Redux/shop/shop.actions';
+import {fetchCollectionsStart} from '../../Redux/shop/shop.actions';
 // import {createStructuredSelector} from 'reselect';
 // import {selectIsCollectionLoading} from '../../Redux/shop/shop.selector';
 import CollectionOverviewContainer from '../../Components/collection-overview/collection-overview-container.component';
@@ -15,9 +15,9 @@ class Shop extends Component{
 
     componentDidMount(){
 
-        const {fetchCollectionsAsync} = this.props;
+        const {fetchCollectionsStart} = this.props;
 
-        fetchCollectionsAsync();
+        fetchCollectionsStart();
     }
 
     render(){
@@ -35,7 +35,7 @@ class Shop extends Component{
 }
 
 const mapDispatchToProps = (dispatch)=>({
-    fetchCollectionsAsync:()=>dispatch(fetchCollectionsStartAsync())
+    fetchCollectionsStart:()=>dispatch(fetchCollectionsStart())
 });
 
 

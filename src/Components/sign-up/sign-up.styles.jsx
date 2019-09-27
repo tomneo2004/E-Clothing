@@ -10,3 +10,9 @@ export const SignUpContainer = styled.div`
 export const Title = styled.h1`
     margin: 10px 0;
 `;
+
+export const ErrorMsg = styled.div`
+    color: red;
+    padding: 5px, 5px;
+    font-size:1.5em;
+`;

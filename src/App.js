@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+import React,{Component, useEffect} from 'react';
 import './App.css';
 import {Route, Switch, Redirect} from 'react-router-dom';
 import Header from './Components/header/header.component';
@@ -13,62 +13,31 @@ import {createStructuredSelector} from 'reselect';
 import {SelectCurrentUser} from './Redux/user/user.selector';
 
 
-class App extends Component {
+const App = ({checkUserSession, currentUser}) => {
   
-
-  unsubscribeFromAuth = null;
-
-  componentDidMount(){
-
-    const {checkUserSession} = this.props;
-
+  useEffect(()=>{
     checkUserSession();
 
-    // const {setCurrentUser} = this.props;
+  }, [checkUserSession]);
 
-    // this.unsubscribeFromAuth = Auth.onAuthStateChanged(async userAuth=>{
-      
-    //   if(userAuth){
+  return (
 
-    //     const userRef = await CreateUserProfile(userAuth);
+    <div>
+      <Header />
+      <Switch>
+        <Route exact path='/' component={HomePage} />
+        <Route path='/shop' component={ShopPage} />
+        <Route exact path='/checkout' component={CheckoutPage} />
+        <Route exact path='/signin-signup' render={()=>
+          currentUser? 
+          (<Redirect to='/' />)
+          : 
+          (<SigninSignupPage />)} 
+          />
+      </Switch>
+    </div>
 
-    //     userRef.onSnapshot(snapshot=>{
-          
-    //       setCurrentUser({
-    //         id:snapshot.id,
-    //         ...snapshot.data()
-    //       });
-    //     });
-    //   }
-    //   else{
-
-    //     setCurrentUser(userAuth);
-    //   }
-
-    // })
-  }
-
-  render(){
-
-    return (
-
-      <div>
-        <Header />
-        <Switch>
-          <Route exact path='/' component={HomePage} />
-          <Route path='/shop' component={ShopPage} />
-          <Route exact path='/checkout' component={CheckoutPage} />
-          <Route exact path='/signin-signup' render={()=>
-            this.props.currentUser? 
-            (<Redirect to='/' />)
-            : 
-            (<SigninSignupPage />)} 
-            />
-        </Switch>
-      </div>
-  
-    );
-  }
+  );
 }
 
 const mapStateToProps = createStructuredSelector({

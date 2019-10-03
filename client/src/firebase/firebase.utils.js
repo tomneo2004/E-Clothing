@@ -1,7 +1,6 @@
 import firebase, { firestore, auth } from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
-import { resolve } from 'dns';
 
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FB_API_KEY,

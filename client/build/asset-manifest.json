@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/E-Clothing/static/css/main.34de6062.chunk.css",
-    "main.js": "/E-Clothing/static/js/main.74fd8955.chunk.js",
-    "main.js.map": "/E-Clothing/static/js/main.74fd8955.chunk.js.map",
+    "main.js": "/E-Clothing/static/js/main.f2a95f28.chunk.js",
+    "main.js.map": "/E-Clothing/static/js/main.f2a95f28.chunk.js.map",
     "runtime~main.js": "/E-Clothing/static/js/runtime~main.7c854da6.js",
     "runtime~main.js.map": "/E-Clothing/static/js/runtime~main.7c854da6.js.map",
     "static/js/2.eb2e57cd.chunk.js": "/E-Clothing/static/js/2.eb2e57cd.chunk.js",
@@ -22,7 +22,7 @@
     "static/js/9.b0a0e79b.chunk.js": "/E-Clothing/static/js/9.b0a0e79b.chunk.js",
     "static/js/9.b0a0e79b.chunk.js.map": "/E-Clothing/static/js/9.b0a0e79b.chunk.js.map",
     "index.html": "/E-Clothing/index.html",
-    "precache-manifest.5eea115dab54bb741665f0841852a61e.js": "/E-Clothing/precache-manifest.5eea115dab54bb741665f0841852a61e.js",
+    "precache-manifest.c627d0e7d0d8315d7785aba8d6e7c336.js": "/E-Clothing/precache-manifest.c627d0e7d0d8315d7785aba8d6e7c336.js",
     "service-worker.js": "/E-Clothing/service-worker.js",
     "static/css/main.34de6062.chunk.css.map": "/E-Clothing/static/css/main.34de6062.chunk.css.map",
     "static/media/crown.ed28accb.svg": "/E-Clothing/static/media/crown.ed28accb.svg",

@@ -5,7 +5,7 @@
   "proxy": "http://localhost:5100",
   "private": true,
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "firebase": "^6.5.0",
     "node-sass": "^4.12.0",
     "react": "^16.9.0",
